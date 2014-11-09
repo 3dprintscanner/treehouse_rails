@@ -1,4 +1,7 @@
 class TodoList < ActiveRecord::Base
+  
+	has_many :todo_items
+
   attr_accessible :description, :title
   validates :title, presence: true
   validates :title, length: {minimum: 3}
