@@ -1,5 +1,9 @@
 Odot::Application.routes.draw do
-  resources :todo_lists
+  get "todo_items/index"
+
+  resources :todo_lists do
+    resources :todo_items
+  end
   root :to => 'todo_lists#index'
 
   # The priority is based upon order of creation:
