@@ -6,10 +6,10 @@ describe "Deleting todo lists" do
 	it "is successful when clicking the destroy link" do
 		visit "/todo_lists"
 
-		within "#todo_list_#{todo.list.id}" do
+		within "#todo_list_#{todo_list.id}" do
 			click_link "Destroy"
 		end
 		expect(page).to_not have_content(todo_list.title)
-		expect(Todolist.count).to eq(0)
+		expect(TodoList.count).to eq(0)
 	end
 end
